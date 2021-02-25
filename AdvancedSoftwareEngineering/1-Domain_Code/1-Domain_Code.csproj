@@ -10,4 +10,8 @@
     <ProjectReference Include="..\0-Abstraction_Code\0-Abstraction_Code.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DomainServices\" />
+  </ItemGroup>
+
 </Project>
