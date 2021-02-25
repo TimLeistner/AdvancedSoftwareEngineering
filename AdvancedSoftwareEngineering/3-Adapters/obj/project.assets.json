@@ -1,11 +1,69 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "0-Abstraction_Code/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/0-Abstraction_Code.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/0-Abstraction_Code.dll": {}
+        }
+      },
+      "1-Domain_Code/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "0-Abstraction_Code": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/1-Domain_Code.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/1-Domain_Code.dll": {}
+        }
+      },
+      "2-Application_Code/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "0-Abstraction_Code": "1.0.0",
+          "1-Domain_Code": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/2-Application_Code.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/2-Application_Code.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "0-Abstraction_Code/1.0.0": {
+      "type": "project",
+      "path": "../0-Abstraction_Code/0-Abstraction_Code.csproj",
+      "msbuildProject": "../0-Abstraction_Code/0-Abstraction_Code.csproj"
+    },
+    "1-Domain_Code/1.0.0": {
+      "type": "project",
+      "path": "../1-Domain_Code/1-Domain_Code.csproj",
+      "msbuildProject": "../1-Domain_Code/1-Domain_Code.csproj"
+    },
+    "2-Application_Code/1.0.0": {
+      "type": "project",
+      "path": "../2-Application_Code/2-Application_Code.csproj",
+      "msbuildProject": "../2-Application_Code/2-Application_Code.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "0-Abstraction_Code >= 1.0.0",
+      "1-Domain_Code >= 1.0.0",
+      "2-Application_Code >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\timle\\.nuget\\packages\\": {}
@@ -32,7 +90,17 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\timle\\source\\repos\\AdvancedSoftwareEngineering\\AdvancedSoftwareEngineering\\0-Abstraction_Code\\0-Abstraction_Code.csproj": {
+              "projectPath": "C:\\Users\\timle\\source\\repos\\AdvancedSoftwareEngineering\\AdvancedSoftwareEngineering\\0-Abstraction_Code\\0-Abstraction_Code.csproj"
+            },
+            "C:\\Users\\timle\\source\\repos\\AdvancedSoftwareEngineering\\AdvancedSoftwareEngineering\\1-Domain_Code\\1-Domain_Code.csproj": {
+              "projectPath": "C:\\Users\\timle\\source\\repos\\AdvancedSoftwareEngineering\\AdvancedSoftwareEngineering\\1-Domain_Code\\1-Domain_Code.csproj"
+            },
+            "C:\\Users\\timle\\source\\repos\\AdvancedSoftwareEngineering\\AdvancedSoftwareEngineering\\2-Application_Code\\2-Application_Code.csproj": {
+              "projectPath": "C:\\Users\\timle\\source\\repos\\AdvancedSoftwareEngineering\\AdvancedSoftwareEngineering\\2-Application_Code\\2-Application_Code.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

@@ -94,5 +94,23 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\0-Abstraction_Code\0-Abstraction_Code.csproj">
+      <Project>{697b8a24-afbb-4a6a-a15c-b64f1f06813a}</Project>
+      <Name>0-Abstraction_Code</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\1-Domain_Code\1-Domain_Code.csproj">
+      <Project>{8ba51f0b-6625-4c0c-8d0e-cc5c9f03dc6b}</Project>
+      <Name>1-Domain_Code</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\2-Application_Code\2-Application_Code.csproj">
+      <Project>{f51f41b8-7f3b-408a-a48e-7c24f753afa3}</Project>
+      <Name>2-Application_Code</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\3-Adapters\3-Adapters.csproj">
+      <Project>{b1d138ad-6ef9-4517-8fc5-cba767e89218}</Project>
+      <Name>3-Adapters</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

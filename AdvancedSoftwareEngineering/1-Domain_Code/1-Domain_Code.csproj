@@ -6,4 +6,8 @@
     <RootNamespace>_1_Domain_Code</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\0-Abstraction_Code\0-Abstraction_Code.csproj" />
+  </ItemGroup>
+
 </Project>

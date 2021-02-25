@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "0-Abstraction_Code/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/0-Abstraction_Code.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/0-Abstraction_Code.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "0-Abstraction_Code/1.0.0": {
+      "type": "project",
+      "path": "../0-Abstraction_Code/0-Abstraction_Code.csproj",
+      "msbuildProject": "../0-Abstraction_Code/0-Abstraction_Code.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "0-Abstraction_Code >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\timle\\.nuget\\packages\\": {}
@@ -32,7 +51,11 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\timle\\source\\repos\\AdvancedSoftwareEngineering\\AdvancedSoftwareEngineering\\0-Abstraction_Code\\0-Abstraction_Code.csproj": {
+              "projectPath": "C:\\Users\\timle\\source\\repos\\AdvancedSoftwareEngineering\\AdvancedSoftwareEngineering\\0-Abstraction_Code\\0-Abstraction_Code.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
