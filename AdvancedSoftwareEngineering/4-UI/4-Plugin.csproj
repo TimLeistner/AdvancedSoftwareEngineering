@@ -51,36 +51,36 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="App.xaml">
+    <ApplicationDefinition Include="UI\App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Report.xaml.cs">
-      <DependentUpon>Report.xaml</DependentUpon>
-    </Compile>
-    <Page Include="Home.xaml">
+    <Page Include="UI\CategoryEditor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="UI\Home.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="App.xaml.cs">
+    <Compile Include="UI\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Home.xaml.cs">
+    <Compile Include="UI\CategoryEditor.xaml.cs">
+      <DependentUpon>CategoryEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="UI\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Report.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -106,7 +106,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="UI\App.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\0-AbstractionCode\0-AbstractionCode.csproj">
@@ -120,6 +120,10 @@
     <ProjectReference Include="..\2-ApplicationCode\2-ApplicationCode.csproj">
       <Project>{823a8047-8eb1-4c31-b4e4-9c63d4af5e00}</Project>
       <Name>2-ApplicationCode</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\3-Adapters\3-Adapters.csproj">
+      <Project>{56FA8447-980E-4483-88C9-E34D1D1B0AD7}</Project>
+      <Name>3-Adapters</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

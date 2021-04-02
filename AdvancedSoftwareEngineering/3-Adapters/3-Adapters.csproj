@@ -5,4 +5,10 @@
     <RootNamespace>_3_Adapters</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\0-AbstractionCode\0-AbstractionCode.csproj" />
+    <ProjectReference Include="..\1-DomainCode\1-DomainCode.csproj" />
+    <ProjectReference Include="..\2-ApplicationCode\2-ApplicationCode.csproj" />
+  </ItemGroup>
+
 </Project>

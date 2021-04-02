@@ -32,6 +32,12 @@ namespace _1_Domain_Code.Entities
             spendings = new List<Spending>();
         }
 
+        public Guid GetGuid()
+        {
+            Guid result = guid;
+            return result;
+        }
+
         public string GetCategoryName()
         {
             string result = name;
@@ -106,6 +112,11 @@ namespace _1_Domain_Code.Entities
         public override int GetHashCode()
         {
             return -1324198676 + guid.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            return GetCategoryName();
         }
     }
 }

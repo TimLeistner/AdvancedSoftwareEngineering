@@ -16,9 +16,25 @@ namespace _2_ApplicationCode.Repositories
             categoryList = new List<Category>();
         }
 
-        public List<Category> GetCategories()
+        public List<Category> GetCategoryList()
         {
             return categoryList;
+        }
+
+        public Category GetCategory(Guid guid)
+        {
+            Category result = null;
+
+            categoryList.ForEach((category) =>
+            {
+                if (category.GetGuid().Equals(guid))
+                {
+                    result = category;
+                    return;
+                }
+            });
+
+            return result;
         }
 
         public void CreateCategory(string name, Colour colour, Money limit)
@@ -32,30 +48,6 @@ namespace _2_ApplicationCode.Repositories
             if (categoryList.Contains(category))
             {
                 categoryList.Remove(category);
-            }
-        }
-
-        public void ChangeCategoryName(Category category, string newName)
-        {
-            if (categoryList.Contains(category))
-            {
-                category.ChangeName(newName);
-            }
-        }
-
-        public void ChangeCategoryColour(Category category, Colour newColour)
-        {
-            if (categoryList.Contains(category))
-            {
-                category.ChangeColour(newColour);
-            }
-        }
-
-        public void ChangeCategoryLimit(Category category, Money newLimit)
-        {
-            if (categoryList.Contains(category))
-            {
-                category.ChangeLimit(newLimit);
             }
         }
     }

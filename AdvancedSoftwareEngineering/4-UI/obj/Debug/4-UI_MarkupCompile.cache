@@ -9,12 +9,12 @@ _4_UI
 none
 false
 DEBUG;TRACE
-C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\4-UI\App.xaml
-3-807645655
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\4-UI\UI\App.xaml
+3-284015295
 
-72095158600
-171774288680
-Home.xaml;MainWindow.xaml;Report.xaml;
+71812121156
+181764602621
+UI\CategoryEditor.xaml;UI\Home.xaml;UI\MainWindow.xaml;
 
 False
 

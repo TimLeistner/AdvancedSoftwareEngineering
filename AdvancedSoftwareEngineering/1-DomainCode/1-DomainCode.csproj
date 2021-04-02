@@ -9,4 +9,8 @@
     <Folder Include="DomainServices\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\0-AbstractionCode\0-AbstractionCode.csproj" />
+  </ItemGroup>
+
 </Project>

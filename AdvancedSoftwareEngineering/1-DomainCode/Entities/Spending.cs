@@ -20,17 +20,24 @@ namespace _1_Domain_Code.Entities
             this.description = description;
         }
 
-        public Spending(Guid guid, Money spendMoney, DateTime date, string description)
-        {
-            this.guid = guid;
-            this.spendMoney = spendMoney;
-            this.date = date;
-            this.description = description;
-        }
-
         public void ChangeDescription(string description)
         {
             this.description = description;
+        }
+
+        public Money GetSpendMoney()
+        {
+            return spendMoney;
+        }
+
+        public DateTime GetDate()
+        {
+            return date;
+        }
+
+        public string GetDescription()
+        {
+            return description;
         }
 
         public override bool Equals(object obj)

@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30621.155
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4-UI", "4-UI\4-UI.csproj", "{AF015C90-7438-434C-822E-9CC6C32A0125}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4-Plugin", "4-UI\4-Plugin.csproj", "{AF015C90-7438-434C-822E-9CC6C32A0125}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "0-AbstractionCode", "0-AbstractionCode\0-AbstractionCode.csproj", "{C783763D-118B-4F4F-B21D-720547AF9D89}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "0-AbstractionCode", "0-AbstractionCode\0-AbstractionCode.csproj", "{C783763D-118B-4F4F-B21D-720547AF9D89}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1-DomainCode", "1-DomainCode\1-DomainCode.csproj", "{307C6D53-983A-401B-AB33-4C4687688672}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "1-DomainCode", "1-DomainCode\1-DomainCode.csproj", "{307C6D53-983A-401B-AB33-4C4687688672}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2-ApplicationCode", "2-ApplicationCode\2-ApplicationCode.csproj", "{823A8047-8EB1-4C31-B4E4-9C63D4AF5E00}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2-ApplicationCode", "2-ApplicationCode\2-ApplicationCode.csproj", "{823A8047-8EB1-4C31-B4E4-9C63D4AF5E00}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3-Adapters", "3-Adapters\3-Adapters.csproj", "{56FA8447-980E-4483-88C9-E34D1D1B0AD7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "3-Adapters", "3-Adapters\3-Adapters.csproj", "{56FA8447-980E-4483-88C9-E34D1D1B0AD7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

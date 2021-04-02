@@ -6,6 +6,7 @@ namespace _1_Domain_Code.Enums
 {
     public enum Colour
     {
+        NONE,
         RED,
         BLUE,
         YELLOW,

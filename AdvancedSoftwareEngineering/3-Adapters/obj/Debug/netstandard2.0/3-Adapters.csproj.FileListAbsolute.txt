@@ -1,0 +1,16 @@
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\3-Adapters\bin\Debug\netstandard2.0\3-Adapters.deps.json
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\3-Adapters\bin\Debug\netstandard2.0\3-Adapters.dll
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\3-Adapters\bin\Debug\netstandard2.0\3-Adapters.pdb
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\3-Adapters\bin\Debug\netstandard2.0\0-AbstractionCode.dll
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\3-Adapters\bin\Debug\netstandard2.0\1-DomainCode.dll
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\3-Adapters\bin\Debug\netstandard2.0\2-ApplicationCode.dll
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\3-Adapters\bin\Debug\netstandard2.0\0-AbstractionCode.pdb
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\3-Adapters\bin\Debug\netstandard2.0\1-DomainCode.pdb
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\3-Adapters\bin\Debug\netstandard2.0\2-ApplicationCode.pdb
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\3-Adapters\obj\Debug\netstandard2.0\3-Adapters.csprojAssemblyReference.cache
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\3-Adapters\obj\Debug\netstandard2.0\3-Adapters.AssemblyInfoInputs.cache
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\3-Adapters\obj\Debug\netstandard2.0\3-Adapters.AssemblyInfo.cs
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\3-Adapters\obj\Debug\netstandard2.0\3-Adapters.csproj.CoreCompileInputs.cache
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\3-Adapters\obj\Debug\netstandard2.0\3-Adapters.csproj.CopyComplete
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\3-Adapters\obj\Debug\netstandard2.0\3-Adapters.dll
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\3-Adapters\obj\Debug\netstandard2.0\3-Adapters.pdb

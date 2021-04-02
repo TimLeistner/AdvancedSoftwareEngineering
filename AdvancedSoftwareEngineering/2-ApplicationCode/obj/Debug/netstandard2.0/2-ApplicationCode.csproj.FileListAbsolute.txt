@@ -7,3 +7,8 @@ C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineer
 C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\2-ApplicationCode\obj\Debug\netstandard2.0\2-ApplicationCode.csproj.CoreCompileInputs.cache
 C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\2-ApplicationCode\obj\Debug\netstandard2.0\2-ApplicationCode.dll
 C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\2-ApplicationCode\obj\Debug\netstandard2.0\2-ApplicationCode.pdb
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\2-ApplicationCode\bin\Debug\netstandard2.0\0-AbstractionCode.dll
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\2-ApplicationCode\bin\Debug\netstandard2.0\1-DomainCode.dll
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\2-ApplicationCode\bin\Debug\netstandard2.0\0-AbstractionCode.pdb
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\2-ApplicationCode\bin\Debug\netstandard2.0\1-DomainCode.pdb
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\2-ApplicationCode\obj\Debug\netstandard2.0\2-ApplicationCode.csproj.CopyComplete
