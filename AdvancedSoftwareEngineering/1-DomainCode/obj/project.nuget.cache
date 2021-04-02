@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "3LeFpN/wHEZvtcuuYh1hghIYRWSWopSryQ4BuOtH8dUYKKPuAYGpx+XjW4VRgcD3SgTquchItadz0efGSDsw+A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\timle\\source\\repos\\AdvancedSoftwareEngineering\\AdvancedSoftwareEngineering\\1-DomainCode\\1-DomainCode.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\timle\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\timle\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

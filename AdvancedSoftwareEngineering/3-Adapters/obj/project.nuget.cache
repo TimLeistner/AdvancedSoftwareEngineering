@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "dBGb7JVWmYlRSa8wvBd7zEB3P4IJuq+9V2vcktQzdJm9styFXb8xKp25M/RkO/P72E5QSWtxlRO0LCHLPuKXcA==",
+  "dgSpecHash": "Ub1p2S+DLM7RmQbBkkFOjVXITSLXcpAwKAY8GrLWlufNNZ1WkTy1dxGFZNrWhmHA8yuKj+5gNBP2gf3MHm8DjQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\timle\\source\\repos\\AdvancedSoftwareEngineering\\AdvancedSoftwareEngineering\\3-Adapters\\3-Adapters.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\timle\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\timle\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

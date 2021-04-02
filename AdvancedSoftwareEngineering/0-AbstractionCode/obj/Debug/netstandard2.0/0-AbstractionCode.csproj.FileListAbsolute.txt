@@ -1,0 +1,9 @@
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\0-AbstractionCode\bin\Debug\netstandard2.0\0-AbstractionCode.deps.json
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\0-AbstractionCode\bin\Debug\netstandard2.0\0-AbstractionCode.dll
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\0-AbstractionCode\bin\Debug\netstandard2.0\0-AbstractionCode.pdb
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\0-AbstractionCode\obj\Debug\netstandard2.0\0-AbstractionCode.csprojAssemblyReference.cache
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\0-AbstractionCode\obj\Debug\netstandard2.0\0-AbstractionCode.AssemblyInfoInputs.cache
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\0-AbstractionCode\obj\Debug\netstandard2.0\0-AbstractionCode.AssemblyInfo.cs
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\0-AbstractionCode\obj\Debug\netstandard2.0\0-AbstractionCode.csproj.CoreCompileInputs.cache
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\0-AbstractionCode\obj\Debug\netstandard2.0\0-AbstractionCode.dll
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\0-AbstractionCode\obj\Debug\netstandard2.0\0-AbstractionCode.pdb

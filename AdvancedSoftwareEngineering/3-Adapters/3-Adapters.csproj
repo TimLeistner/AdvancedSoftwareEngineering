@@ -1,15 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>_3_Adapters</RootNamespace>
   </PropertyGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\0-Abstraction_Code\0-Abstraction_Code.csproj" />
-    <ProjectReference Include="..\1-Domain_Code\1-Domain_Code.csproj" />
-    <ProjectReference Include="..\2-Application_Code\2-Application_Code.csproj" />
-  </ItemGroup>
 
 </Project>
