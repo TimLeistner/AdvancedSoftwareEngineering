@@ -19,17 +19,17 @@ namespace _1_Domain_Code.Entities
             guid = new Guid();
             this.name = name;
             this.colour = colour;
-            this.limit = limit;
-            spendings = new List<Spending>();
-        }
 
-        public Category(Guid guid, string name, Colour colour, Money limit, List<Spending> spendings)
-        {
-            this.guid = guid;
-            this.name = name;
-            this.colour = colour;
-            this.limit = limit;
-            this.spendings = spendings;
+            if (limit.GetValue() >= 0)
+            {
+                this.limit = limit;
+            }
+            else
+            {
+                this.limit = new Money(0, limit.GetCurrency());
+            }
+
+            spendings = new List<Spending>();
         }
 
         public string GetCategoryName()
@@ -54,6 +54,47 @@ namespace _1_Domain_Code.Entities
         {
             List<Spending> result = spendings;
             return result;
+        }
+
+        public void AddSpending(Spending spending)
+        {
+            spendings.Add(spending);
+        }
+
+        public void RemoveSpending(Spending spending)
+        {
+            if (spendings.Contains(spending))
+            {
+                spendings.Remove(spending);
+            }   
+        }
+
+        public void ChangeName(string newName)
+        {
+            if(newName != null)
+            {
+                name = newName;
+            }
+        }
+
+        public void ChangeColour(Colour newColour)
+        {
+            colour = newColour;
+        }
+
+        public void ChangeLimit(Money newLimit)
+        {
+            if(newLimit != null)
+            {
+                if(newLimit.GetValue() >= 0)
+                {
+                    limit = newLimit;
+                }
+                else
+                {
+                    limit = new Money(0, newLimit.GetCurrency());
+                }    
+            }
         }
 
         public override bool Equals(object obj)
