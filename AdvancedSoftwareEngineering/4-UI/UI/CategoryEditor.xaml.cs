@@ -28,6 +28,8 @@ namespace _4_UI.UI
         {
             InitializeComponent();
             this.categoryAdapter = categoryAdapter;
+            ClickCreationMode(null, null);
+            InstantiateEditingMask();
         }
 
         public void BackClick(object sender, RoutedEventArgs e)
@@ -35,49 +37,69 @@ namespace _4_UI.UI
             this.NavigationService.Navigate(Home.GetInstance());
         }
 
-        public void StartCreateCategory(object sender, RoutedEventArgs e)
+        public void ClickCreationMode(object sender, RoutedEventArgs e)
         {
-            if (myGrid.Children.Contains(categoryList))
+            if (myGrid.Children.Contains(categoryListBox))
             {
-                myGrid.Children.Remove(categoryList);
+                myGrid.Children.Remove(categoryListBox);
             }
             if (myGrid.Children.Contains(categoryLabel))
             {
                 myGrid.Children.Remove(categoryLabel);
             }
+            if (!myGrid.Children.Contains(createCategoryButton))
+            {
+                myGrid.Children.Add(createCategoryButton);
+            }
+
+            categoryListBox.ItemsSource = categoryAdapter.GetCategoryList();
+            nameTextBox.Text = "";
+            limitTextBox.Text = "";
         }
 
-        public void StartEditCategory(object sender, RoutedEventArgs e)
+        public void ClickEditMode(object sender, RoutedEventArgs e)
         {
-            if (!myGrid.Children.Contains(categoryList))
+            if (!myGrid.Children.Contains(categoryListBox))
             {
-                myGrid.Children.Add(categoryList);
+                myGrid.Children.Add(categoryListBox);
             }
             if (!myGrid.Children.Contains(categoryLabel))
             {
                 myGrid.Children.Add(categoryLabel);
             }
+
+            SetEditingMaskForSelectedCategory();
         }
 
-        private void SetEditingMask(ListBox categoryListBox = null)
+        public void CategorySelectionChanged(object sender, RoutedEventArgs e)
         {
-            
-            string nameContent = "";
-            string valueContent = "";
+            SetEditingMaskForSelectedCategory();
+        }
 
-            ListBox availableColours = new ListBox();
-            availableColours.ItemsSource = new List<Colour>() { Colour.BLUE, Colour.GREEN, Colour.RED, Colour.YELLOW };
-            ListBox availableCurrencies = new ListBox();
-            availableCurrencies.ItemsSource = new List<Currency>() { Currency.EURO };
+        public void ClickCreateCategory(object sender, RoutedEventArgs e)
+        {
+            string categoryName = nameTextBox.Text;
+            Colour categoryColour = (Colour)colourListBox.SelectedItem;
+            double categoryLimitValue =  Convert.ToDouble(limitTextBox.Text);
+            Currency categoryCurrency = (Currency)currencyListBox.SelectedItem;
 
-            if(categoryListBox != null)
-            {
-                Category selectedCategory = (Category)categoryListBox.SelectedItem;
-                nameContent = selectedCategory.GetCategoryName();
-                availableColours.SelectedItem = selectedCategory.GetColour();
-                valueContent = selectedCategory.GetLimit().GetValue().ToString();
-                availableCurrencies.SelectedItem = selectedCategory.GetLimit().GetCurrency();
-            }
+            categoryAdapter.AddCategory(categoryName, categoryColour, categoryLimitValue, categoryCurrency);
+        }
+
+        private void InstantiateEditingMask()
+        {
+            colourListBox.ItemsSource = Enum.GetValues(typeof(Colour));
+            currencyListBox.ItemsSource = Enum.GetValues(typeof(Currency));
+        }
+
+        private void SetEditingMaskForSelectedCategory()
+        {
+            Category selectedCategory = (Category)categoryListBox.Items[0];
+
+            nameTextBox.Text = selectedCategory.GetCategoryName();
+            colourListBox.SelectedItem = selectedCategory.GetColour();
+            limitTextBox.Text = selectedCategory.GetLimit().GetValue().ToString();
+            currencyListBox.SelectedItem = selectedCategory.GetLimit().GetCurrency();
         }
     }
 }

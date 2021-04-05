@@ -21,10 +21,10 @@
         <Label Grid.Column="0" Grid.Row="0" FontSize="20" Margin="0,0,0,125" HorizontalAlignment="Center" VerticalAlignment="Center">
             What do you want to do?
         </Label>
-        <Button Grid.Column="0" Grid.Row="0" Margin="0,0,0,40" Width="125" Height="25" HorizontalAlignment="Center" Click="StartCreateCategory">
+        <Button Grid.Column="0" Grid.Row="0" Margin="0,0,0,40" Width="125" Height="25" HorizontalAlignment="Center" Click="ClickCreationMode">
             Creation Mode
         </Button>
-        <Button Grid.Column="0" Grid.Row="0" Margin="0,40,0,0" Width="125" Height="25" HorizontalAlignment="Center" Click="StartEditCategory">
+        <Button Grid.Column="0" Grid.Row="0" Margin="0,40,0,0" Width="125" Height="25" HorizontalAlignment="Center" Click="ClickEditMode">
             Edit Mode
         </Button>
         <Button Grid.Column="1" Grid.Row="2" Margin="0,10,10,0" Width="125" Height="25" HorizontalAlignment="Right" Click="BackClick">
@@ -33,15 +33,17 @@
 
         <Label Grid.Column="1" Grid.Row="0" FontSize="20" Margin="0,20,0,0" HorizontalAlignment="Center" VerticalAlignment="Top">Category Editor</Label>
         <Label Grid.Column="1" Grid.Row="0" FontSize="16" Margin="25,0,0,165"  HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="categoryLabel">Category</Label>
-        <ListBox Grid.Column="1" Grid.Row="0" Margin="25,0,0,100"  Width="100" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="categoryList"/>
+        <ListBox Grid.Column="1" Grid.Row="0" Margin="25,0,0,100"  Width="100" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center" SelectionChanged="CategorySelectionChanged" x:Name="categoryListBox"/>
 
         <Label Grid.Column="1" Grid.Row="0" FontSize="16" Margin="20,0,0,15"  HorizontalAlignment="Left" VerticalAlignment="Center">Categoryname</Label>
         <TextBox Grid.Column="1" Grid.Row="0" Margin="25,50,0,0"  Width="100" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="nameTextBox"></TextBox>
         <Label Grid.Column="1" Grid.Row="0" FontSize="16" Margin="145,0,0,15"  HorizontalAlignment="Left" VerticalAlignment="Center">Colour</Label>
-        <ListBox Grid.Column="1" Grid.Row="0" Margin="145,50,0,0"  Width="100" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="colourList"/>
+        <ListBox Grid.Column="1" Grid.Row="0" Margin="145,50,0,0"  Width="100" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="colourListBox"/>
         <Label Grid.Column="1" Grid.Row="0" FontSize="16" Margin="270,0,0,15"  HorizontalAlignment="Left" VerticalAlignment="Center">Limit</Label>
         <TextBox Grid.Column="1" Grid.Row="0" Margin="270,50,0,0"  Width="100" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="limitTextBox"></TextBox>
         <Label Grid.Column="1" Grid.Row="0" FontSize="16" Margin="395,0,0,15"  HorizontalAlignment="Left" VerticalAlignment="Center">Currency</Label>
-        <ListBox Grid.Column="1" Grid.Row="0" Margin="395,50,0,0"  Width="100" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="currencyList"/>
+        <ListBox Grid.Column="1" Grid.Row="0" Margin="395,50,0,0"  Width="100" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="currencyListBox"/>
+
+        <Button Grid.Column="1" Grid.Row="0" Margin="0,150,50,0" Width="125" Height="25" HorizontalAlignment="Right" Click="ClickCreateCategory" x:Name="createCategoryButton">Create Category</Button>
     </Grid>
 </Page>
