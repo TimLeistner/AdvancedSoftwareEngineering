@@ -26,3 +26,5 @@ C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineer
 C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\4-UI\bin\Debug\3-Adapters.pdb
 C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\4-UI\obj\Debug\UI\CategoryEditor.g.cs
 C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\4-UI\obj\Debug\UI\CategoryEditor.baml
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\4-UI\obj\Debug\UI\SpendingEditor.g.cs
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\4-UI\obj\Debug\UI\SpendingEditor.baml

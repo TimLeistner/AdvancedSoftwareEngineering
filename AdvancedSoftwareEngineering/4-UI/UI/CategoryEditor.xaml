@@ -32,7 +32,7 @@
         </Button>
 
         <Label Grid.Column="1" Grid.Row="0" FontSize="20" Margin="0,20,0,0" HorizontalAlignment="Center" VerticalAlignment="Top">Category Editor</Label>
-        <Label Grid.Column="1" Grid.Row="0" FontSize="16" Margin="25,0,0,165"  HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="categoryLabel">Category</Label>
+        <Label Grid.Column="1" Grid.Row="0" FontSize="16" Margin="25,0,0,165"  HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="categoryLabel">Choose a category</Label>
         <ComboBox Grid.Column="1" Grid.Row="0" Margin="25,0,0,100"  Width="100" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center" SelectionChanged="CategorySelectionChanged" x:Name="categoryComboBox"/>
 
         <Label Grid.Column="1" Grid.Row="0" FontSize="16" Margin="20,0,0,15"  HorizontalAlignment="Left" VerticalAlignment="Center">Categoryname</Label>

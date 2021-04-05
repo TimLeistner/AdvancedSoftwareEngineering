@@ -37,6 +37,12 @@ namespace _4_UI
             this.NavigationService.Navigate(categoryEditor);
         }
 
+        private void EditSpendingClick(object sender, RoutedEventArgs e)
+        {
+            SpendingEditor spendingEditor = new SpendingEditor(adapterManager.GetCategoryAdapter());
+            this.NavigationService.Navigate(spendingEditor);
+        }
+
         public static Home GetInstance()
         {
             return instance;
