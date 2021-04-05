@@ -23,7 +23,7 @@ namespace _3_Adapters
             return categoryRepository.GetCategoryList();
         }
 
-        public void ChangeCategory(Category category, string newName = null, Colour newColour = Colour.NONE, Money newLimit = null)
+        public void ChangeCategory(Category category, string newName = null, Colour newColour = Colour.NONE, double newLimitValue = Double.NaN, Currency newCurrency = Currency.NONE)
         {
             if(newName != null)
             {
@@ -35,9 +35,30 @@ namespace _3_Adapters
                 category.ChangeColour(newColour);
             }
 
-            if(newLimit != null)
+            if (newLimitValue != Double.NaN || newCurrency != Currency.NONE)
             {
-                category.ChangeLimit(newLimit);
+                double limitValue;
+                Currency limitCurrency;
+
+                if(newLimitValue == Double.NaN)
+                {
+                    limitValue = category.GetLimit().GetValue();
+                }
+                else
+                {
+                    limitValue = newLimitValue;
+                }
+
+                if(newCurrency == Currency.NONE)
+                {
+                    limitCurrency = category.GetLimit().GetCurrency();
+                }
+                else
+                {
+                    limitCurrency = newCurrency;
+                }
+
+                category.ChangeLimit(new Money(limitValue, limitCurrency));
             }
         }
 
