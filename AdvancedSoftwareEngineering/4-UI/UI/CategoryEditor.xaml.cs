@@ -39,9 +39,9 @@ namespace _4_UI.UI
 
         public void ClickCreationMode(object sender, RoutedEventArgs e)
         {
-            if (myGrid.Children.Contains(categoryListBox))
+            if (myGrid.Children.Contains(categoryComboBox))
             {
-                myGrid.Children.Remove(categoryListBox);
+                myGrid.Children.Remove(categoryComboBox);
             }
             if (myGrid.Children.Contains(categoryLabel))
             {
@@ -52,22 +52,23 @@ namespace _4_UI.UI
                 myGrid.Children.Add(createCategoryButton);
             }
 
-            categoryListBox.ItemsSource = categoryAdapter.GetCategoryList();
+            
             nameTextBox.Text = "";
             limitTextBox.Text = "";
         }
 
         public void ClickEditMode(object sender, RoutedEventArgs e)
         {
-            if (!myGrid.Children.Contains(categoryListBox))
+            if (!myGrid.Children.Contains(categoryComboBox))
             {
-                myGrid.Children.Add(categoryListBox);
+                myGrid.Children.Add(categoryComboBox);
             }
             if (!myGrid.Children.Contains(categoryLabel))
             {
                 myGrid.Children.Add(categoryLabel);
             }
 
+            categoryComboBox.ItemsSource = categoryAdapter.GetCategoryList();
             SetEditingMaskForSelectedCategory();
         }
 
@@ -79,27 +80,31 @@ namespace _4_UI.UI
         public void ClickCreateCategory(object sender, RoutedEventArgs e)
         {
             string categoryName = nameTextBox.Text;
-            Colour categoryColour = (Colour)colourListBox.SelectedItem;
+            Colour categoryColour = (Colour)colourComboBox.SelectedItem;
             double categoryLimitValue =  Convert.ToDouble(limitTextBox.Text);
-            Currency categoryCurrency = (Currency)currencyListBox.SelectedItem;
+            Currency categoryCurrency = (Currency)currencyComboBox.SelectedItem;
 
             categoryAdapter.AddCategory(categoryName, categoryColour, categoryLimitValue, categoryCurrency);
         }
 
         private void InstantiateEditingMask()
         {
-            colourListBox.ItemsSource = Enum.GetValues(typeof(Colour));
-            currencyListBox.ItemsSource = Enum.GetValues(typeof(Currency));
+            colourComboBox.ItemsSource = Enum.GetValues(typeof(Colour));
+            currencyComboBox.ItemsSource = Enum.GetValues(typeof(Currency));
         }
 
         private void SetEditingMaskForSelectedCategory()
         {
-            Category selectedCategory = (Category)categoryListBox.Items[0];
-
+            Category selectedCategory = (Category)categoryComboBox.SelectedItem;
+            if(selectedCategory == null)
+            {
+                selectedCategory = (Category)categoryComboBox.Items[0];
+                categoryComboBox.SelectedItem = selectedCategory;
+            }
             nameTextBox.Text = selectedCategory.GetCategoryName();
-            colourListBox.SelectedItem = selectedCategory.GetColour();
+            colourComboBox.SelectedItem = selectedCategory.GetColour();
             limitTextBox.Text = selectedCategory.GetLimit().GetValue().ToString();
-            currencyListBox.SelectedItem = selectedCategory.GetLimit().GetCurrency();
+            currencyComboBox.SelectedItem = selectedCategory.GetLimit().GetCurrency();
         }
     }
 }
