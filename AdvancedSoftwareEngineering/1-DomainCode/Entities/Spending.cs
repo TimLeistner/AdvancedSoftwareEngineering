@@ -14,7 +14,7 @@ namespace _1_Domain_Code.Entities
 
         public Spending(Money spendMoney, DateTime date, string description)
         {
-            guid = new Guid();
+            guid = Guid.NewGuid();
             this.spendMoney = spendMoney;
             this.date = date;
             this.description = description;

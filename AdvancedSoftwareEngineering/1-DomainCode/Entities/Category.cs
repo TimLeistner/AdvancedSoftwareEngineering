@@ -16,7 +16,7 @@ namespace _1_Domain_Code.Entities
 
         public Category(string name, Colour colour, Money limit)
         {
-            guid = new Guid();
+            guid = Guid.NewGuid();
             this.name = name;
             this.colour = colour;
 

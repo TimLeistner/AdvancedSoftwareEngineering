@@ -1,4 +1,7 @@
-﻿using _3_Adapters;
+﻿using _1_Domain_Code.Entities;
+using _1_Domain_Code.Enums;
+using _1_Domain_Code.ValueObjects;
+using _3_Adapters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +29,7 @@ namespace _4_UI.UI
         {
             InitializeComponent();
             this.categoryAdapter = categoryAdapter;
+            InstantiateEditingMask();
         }
 
         public void BackClick(object sender, RoutedEventArgs e)
@@ -35,18 +39,38 @@ namespace _4_UI.UI
 
         public void ClickAddSpendingMode(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         public void ClickAddSpending(object sedner, RoutedEventArgs e)
         {
+            Category selectedCategory = (Category)categoryComboBox.SelectedItem;
+            double amount = Convert.ToDouble(moneyTextBox.Text);
+            DateTime date = (DateTime)spendingDatePicker.SelectedDate;
+            string description = descriptionTextBox.Text;
 
+            Money spendingAmount = new Money(amount, selectedCategory.GetLimit().GetCurrency());
+            Spending newSpending = new Spending(spendingAmount, date, description);
+
+            selectedCategory.AddSpending(newSpending);
+            ClearInputFields();
         }
 
-        public void CategorySelectionChanged(object sender, RoutedEventArgs e)
+        public void ChangeSelectedCategory(object sender, RoutedEventArgs e)
         {
-
+            currencyLabel.Content = ((Category)categoryComboBox.SelectedItem).GetLimit().GetCurrency().ToString();
         }
 
+        private void InstantiateEditingMask()
+        {
+            categoryComboBox.ItemsSource = categoryAdapter.GetCategoryList();
+        }
+
+        private void ClearInputFields()
+        {
+            spendingDatePicker.SelectedDate = null;
+            moneyTextBox.Text = "";
+            descriptionTextBox.Text = "";
+        }
     }
 }
