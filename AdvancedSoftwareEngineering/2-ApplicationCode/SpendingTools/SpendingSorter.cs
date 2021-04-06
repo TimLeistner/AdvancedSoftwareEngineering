@@ -8,7 +8,7 @@ namespace _2_ApplicationCode.SpendingTools
 {
     public class SpendingSorter
     {
-        public static List<ISpending> GetSpendingByMonth(List<ISpending> spendings, DateTime month)
+        public static List<ISpending> GetSpendingForMonth(List<ISpending> spendings, DateTime month)
         {
             List<ISpending> spendingOfMonth = new List<ISpending>();
             spendings.ForEach((spending) =>
@@ -47,12 +47,12 @@ namespace _2_ApplicationCode.SpendingTools
             } while (swapped);
         }
 
-        public static void SwapEntries(ref List<ISpending> list, int entry1, int entry2)
+        private static void SwapEntries(ref List<ISpending> list, int entry1, int entry2)
         {
             ISpending firstObject = list[entry1];
             ISpending secondObject = list[entry2];
-            list[entry1] = firstObject;
-            list[entry2] = secondObject;
+            list[entry2] = firstObject;
+            list[entry1] = secondObject;
         }
     }
 }

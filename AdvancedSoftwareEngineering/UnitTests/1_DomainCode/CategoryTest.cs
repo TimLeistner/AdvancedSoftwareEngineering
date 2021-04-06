@@ -5,7 +5,6 @@ using _1_DomainCode.Entities.Interfaces;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace UnitTests._1_DomainCode
 {

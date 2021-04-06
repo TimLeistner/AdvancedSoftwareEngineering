@@ -22,7 +22,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="2_ApplicationCode\" />
     <Folder Include="3_Adapters\" />
   </ItemGroup>
 

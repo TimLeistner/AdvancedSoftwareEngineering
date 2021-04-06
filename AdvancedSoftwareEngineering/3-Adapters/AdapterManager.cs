@@ -1,8 +1,6 @@
 ﻿using _2_ApplicationCode;
 using _3_Adapters.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 namespace _3_Adapters
 {

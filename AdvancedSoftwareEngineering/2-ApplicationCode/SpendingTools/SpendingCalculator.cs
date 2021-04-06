@@ -8,16 +8,10 @@ namespace _2_ApplicationCode.SpendingTools
 {
     public class SpendingCalculator
     {
-        ICategory category;
-        SpendingCalculator(ICategory category)
-        {
-            this.category = category;
-        }
-
-        public bool IsLimitExceeded(DateTime month)
+        public static bool IsLimitExceeded(ICategory category, DateTime month)
         {
             bool result = false;
-            List<ISpending> spendingOfMonth = SpendingSorter.GetSpendingByMonth(category.GetSpendings(), month);
+            List<ISpending> spendingOfMonth = SpendingSorter.GetSpendingForMonth(category.GetSpendings(), month);
 
             double limit = category.GetLimit().GetValue();
             double sumOfSpending = GetSumOfSpending(spendingOfMonth);
@@ -27,7 +21,7 @@ namespace _2_ApplicationCode.SpendingTools
             return result;
         }
 
-        public double GetSumOfSpending(List<ISpending> spendings)
+        public static double GetSumOfSpending(List<ISpending> spendings)
         {
             double sumOfSpending = 0;
 
