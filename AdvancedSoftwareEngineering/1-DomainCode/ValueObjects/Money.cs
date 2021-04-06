@@ -3,7 +3,7 @@ using _1_Domain_Code.Enums;
 
 namespace _1_Domain_Code.ValueObjects
 {
-    public sealed class Money
+    public class Money
     {
         private double value;
         private Currency currency;
