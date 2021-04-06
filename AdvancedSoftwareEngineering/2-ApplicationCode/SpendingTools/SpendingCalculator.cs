@@ -1,4 +1,5 @@
 ﻿using _1_Domain_Code.Entities;
+using _1_DomainCode.Entities.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,8 +8,8 @@ namespace _2_ApplicationCode.SpendingTools
 {
     public class SpendingCalculator
     {
-        Category category;
-        SpendingCalculator(Category category)
+        ICategory category;
+        SpendingCalculator(ICategory category)
         {
             this.category = category;
         }
@@ -16,7 +17,7 @@ namespace _2_ApplicationCode.SpendingTools
         public bool IsLimitExceeded(DateTime month)
         {
             bool result = false;
-            List<Spending> spendingOfMonth = SpendingSorter.GetSpendingByMonth(category.GetSpendings(), month);
+            List<ISpending> spendingOfMonth = SpendingSorter.GetSpendingByMonth(category.GetSpendings(), month);
 
             double limit = category.GetLimit().GetValue();
             double sumOfSpending = GetSumOfSpending(spendingOfMonth);
@@ -26,7 +27,7 @@ namespace _2_ApplicationCode.SpendingTools
             return result;
         }
 
-        public double GetSumOfSpending(List<Spending> spendings)
+        public double GetSumOfSpending(List<ISpending> spendings)
         {
             double sumOfSpending = 0;
 

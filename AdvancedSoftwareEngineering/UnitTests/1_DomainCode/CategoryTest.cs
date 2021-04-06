@@ -1,6 +1,7 @@
 ﻿using _1_Domain_Code.Entities;
 using _1_Domain_Code.Enums;
 using _1_Domain_Code.ValueObjects;
+using _1_DomainCode.Entities.Interfaces;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -38,7 +39,7 @@ namespace UnitTests._1_DomainCode
             Spending spending = new Spending(money, new DateTime(), "Test");
 
             category.AddSpending(spending);
-            List<Spending> spendingList = category.GetSpendings();
+            List<ISpending> spendingList = category.GetSpendings();
             Assert.IsTrue(spendingList.Count == 1 && spendingList.Contains(spending));
 
             category.RemoveSpending(spending);

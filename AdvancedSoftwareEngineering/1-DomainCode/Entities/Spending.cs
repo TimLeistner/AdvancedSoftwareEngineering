@@ -2,17 +2,19 @@
 using System.Collections.Generic;
 using System.Text;
 using _1_Domain_Code.ValueObjects;
+using _1_DomainCode.Entities.Interfaces;
+using _1_DomainCode.ValueObjects.Interfaces;
 
 namespace _1_Domain_Code.Entities
 {
-    public sealed class Spending
+    public sealed class Spending: ISpending
     {
         private Guid guid;
-        private Money spendMoney;
+        private IMoney spendMoney;
         private DateTime date;
         private string description;
 
-        public Spending(Money spendMoney, DateTime date, string description)
+        public Spending(IMoney spendMoney, DateTime date, string description)
         {
             guid = Guid.NewGuid();
             this.spendMoney = spendMoney;
@@ -25,7 +27,7 @@ namespace _1_Domain_Code.Entities
             this.description = description;
         }
 
-        public Money GetSpendMoney()
+        public IMoney GetSpendMoney()
         {
             return spendMoney;
         }

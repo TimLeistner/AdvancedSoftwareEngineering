@@ -9,14 +9,14 @@ namespace _2_ApplicationCode
     
     public class FinanceManager
     {
-        private CategoryRepository categoryRepository;
+        private ICategoryRepository categoryRepository;
 
         public FinanceManager()
         {
             categoryRepository = new CategoryRepository();
         }
 
-        public CategoryRepository GetCategoryRepository()
+        public ICategoryRepository GetCategoryRepository()
         {
             return categoryRepository;
         }

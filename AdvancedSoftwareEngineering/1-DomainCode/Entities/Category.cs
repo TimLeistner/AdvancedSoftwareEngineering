@@ -3,18 +3,20 @@ using System.Collections.Generic;
 using System.Text;
 using _1_Domain_Code.Enums;
 using _1_Domain_Code.ValueObjects;
+using _1_DomainCode.Entities.Interfaces;
+using _1_DomainCode.ValueObjects.Interfaces;
 
 namespace _1_Domain_Code.Entities
 {
-    public sealed class Category
+    public sealed class Category: ICategory
     {
         private Guid guid;
         private string name;
         private Colour colour;
-        private Money limit;
-        private List<Spending> spendings;
+        private IMoney limit;
+        private List<ISpending> spendings;
 
-        public Category(string name, Colour colour, Money limit)
+        public Category(string name, Colour colour, IMoney limit)
         {
             guid = Guid.NewGuid();
             this.name = name;
@@ -29,7 +31,7 @@ namespace _1_Domain_Code.Entities
                 this.limit = new Money(0, limit.GetCurrency());
             }
 
-            spendings = new List<Spending>();
+            spendings = new List<ISpending>();
         }
 
         public Guid GetGuid()
@@ -50,24 +52,24 @@ namespace _1_Domain_Code.Entities
             return result;
         }
 
-        public Money GetLimit()
+        public IMoney GetLimit()
         {
-            Money result = limit;
+            IMoney result = limit;
             return result;
         }
 
-        public List<Spending> GetSpendings()
+        public List<ISpending> GetSpendings()
         {
-            List<Spending> result = spendings;
+            List<ISpending> result = spendings;
             return result;
         }
 
-        public void AddSpending(Spending spending)
+        public void AddSpending(ISpending spending)
         {
             spendings.Add(spending);
         }
 
-        public void RemoveSpending(Spending spending)
+        public void RemoveSpending(ISpending spending)
         {
             if (spendings.Contains(spending))
             {
@@ -88,7 +90,7 @@ namespace _1_Domain_Code.Entities
             colour = newColour;
         }
 
-        public void ChangeLimit(Money newLimit)
+        public void ChangeLimit(IMoney newLimit)
         {
             if(newLimit != null)
             {

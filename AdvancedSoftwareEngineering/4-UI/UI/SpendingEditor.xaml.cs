@@ -1,7 +1,9 @@
 ﻿using _1_Domain_Code.Entities;
 using _1_Domain_Code.Enums;
 using _1_Domain_Code.ValueObjects;
+using _1_DomainCode.Entities.Interfaces;
 using _3_Adapters;
+using _3_Adapters.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,8 +26,8 @@ namespace _4_UI.UI
     /// </summary>
     public partial class SpendingEditor : Page
     {
-        CategoryAdapter categoryAdapter;
-        public SpendingEditor(CategoryAdapter categoryAdapter)
+        ICategoryAdapter categoryAdapter;
+        public SpendingEditor(ICategoryAdapter categoryAdapter)
         {
             InitializeComponent();
             this.categoryAdapter = categoryAdapter;
@@ -44,7 +46,7 @@ namespace _4_UI.UI
 
         public void ClickAddSpending(object sedner, RoutedEventArgs e)
         {
-            Category selectedCategory = (Category)categoryComboBox.SelectedItem;
+            ICategory selectedCategory = (ICategory)categoryComboBox.SelectedItem;
             double amount = Convert.ToDouble(moneyTextBox.Text);
             DateTime date = (DateTime)spendingDatePicker.SelectedDate;
             string description = descriptionTextBox.Text;
@@ -58,7 +60,7 @@ namespace _4_UI.UI
 
         public void ChangeSelectedCategory(object sender, RoutedEventArgs e)
         {
-            currencyLabel.Content = ((Category)categoryComboBox.SelectedItem).GetLimit().GetCurrency().ToString();
+            currencyLabel.Content = ((ICategory)categoryComboBox.SelectedItem).GetLimit().GetCurrency().ToString();
         }
 
         private void InstantiateEditingMask()

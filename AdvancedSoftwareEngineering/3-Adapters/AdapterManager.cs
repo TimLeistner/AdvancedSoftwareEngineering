@@ -1,4 +1,5 @@
 ﻿using _2_ApplicationCode;
+using _3_Adapters.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,7 +9,7 @@ namespace _3_Adapters
     public class AdapterManager
     {
         private FinanceManager financeManager;
-        private CategoryAdapter categoryAdapter;
+        private ICategoryAdapter categoryAdapter;
 
         public AdapterManager()
         {
@@ -16,7 +17,7 @@ namespace _3_Adapters
             categoryAdapter = new CategoryAdapter(financeManager);
         }
 
-        public CategoryAdapter GetCategoryAdapter()
+        public ICategoryAdapter GetCategoryAdapter()
         {
             return categoryAdapter;
         }

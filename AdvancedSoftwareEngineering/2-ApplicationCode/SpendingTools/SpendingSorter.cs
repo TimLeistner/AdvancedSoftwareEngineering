@@ -1,4 +1,5 @@
 ﻿using _1_Domain_Code.Entities;
+using _1_DomainCode.Entities.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,9 +8,9 @@ namespace _2_ApplicationCode.SpendingTools
 {
     public class SpendingSorter
     {
-        public static List<Spending> GetSpendingByMonth(List<Spending> spendings, DateTime month)
+        public static List<ISpending> GetSpendingByMonth(List<ISpending> spendings, DateTime month)
         {
-            List<Spending> spendingOfMonth = new List<Spending>();
+            List<ISpending> spendingOfMonth = new List<ISpending>();
             spendings.ForEach((spending) =>
             {
                 DateTime spendingDate = spending.GetDate();
@@ -26,7 +27,7 @@ namespace _2_ApplicationCode.SpendingTools
             return spendingOfMonth;
         }
 
-        public static void SortSpendingByDate(ref List<Spending> spendings)
+        public static void SortSpendingByDate(ref List<ISpending> spendings)
         {
             int n = spendings.Count;
             bool swapped = false;
@@ -46,10 +47,10 @@ namespace _2_ApplicationCode.SpendingTools
             } while (swapped);
         }
 
-        public static void SwapEntries(ref List<Spending> list, int entry1, int entry2)
+        public static void SwapEntries(ref List<ISpending> list, int entry1, int entry2)
         {
-            Spending firstObject = list[entry1];
-            Spending secondObject = list[entry2];
+            ISpending firstObject = list[entry1];
+            ISpending secondObject = list[entry2];
             list[entry1] = firstObject;
             list[entry2] = secondObject;
         }

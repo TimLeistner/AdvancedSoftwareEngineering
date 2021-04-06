@@ -1,29 +1,31 @@
 ﻿using _1_Domain_Code.Entities;
 using _1_Domain_Code.Enums;
 using _1_Domain_Code.ValueObjects;
+using _1_DomainCode.Entities.Interfaces;
+using _1_DomainCode.ValueObjects.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace _2_ApplicationCode.Repositories
 {
-    public class CategoryRepository
+    public class CategoryRepository: ICategoryRepository
     {
-        private List<Category> categoryList;
+        private List<ICategory> categoryList;
 
         public CategoryRepository()
         {
-            categoryList = new List<Category>();
+            categoryList = new List<ICategory>();
         }
 
-        public List<Category> GetCategoryList()
+        public List<ICategory> GetCategoryList()
         {
             return categoryList;
         }
 
-        public Category GetCategory(Guid guid)
+        public ICategory GetCategory(Guid guid)
         {
-            Category result = null;
+            ICategory result = null;
 
             categoryList.ForEach((category) =>
             {
@@ -37,13 +39,13 @@ namespace _2_ApplicationCode.Repositories
             return result;
         }
 
-        public void CreateCategory(string name, Colour colour, Money limit)
+        public void CreateCategory(string name, Colour colour, IMoney limit)
         {
-            Category category = new Category(name, colour, limit);
+            ICategory category = new Category(name, colour, limit);
             categoryList.Add(category);
         }
 
-        public void DeleteCategory(Category category)
+        public void DeleteCategory(ICategory category)
         {
             if (categoryList.Contains(category))
             {

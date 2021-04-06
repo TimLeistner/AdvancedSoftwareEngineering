@@ -1,9 +1,10 @@
 ﻿using System;
 using _1_Domain_Code.Enums;
+using _1_DomainCode.ValueObjects.Interfaces;
 
 namespace _1_Domain_Code.ValueObjects
 {
-    public class Money
+    public class Money: IMoney
     {
         private double value;
         private Currency currency;

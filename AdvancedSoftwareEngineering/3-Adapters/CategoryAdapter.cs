@@ -1,29 +1,32 @@
 ﻿using _1_Domain_Code.Entities;
 using _1_Domain_Code.Enums;
 using _1_Domain_Code.ValueObjects;
+using _1_DomainCode.Entities.Interfaces;
+using _1_DomainCode.ValueObjects.Interfaces;
 using _2_ApplicationCode;
 using _2_ApplicationCode.Repositories;
+using _3_Adapters.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace _3_Adapters
 {
-    public class CategoryAdapter
+    public class CategoryAdapter: ICategoryAdapter
     {
-        private CategoryRepository categoryRepository;
+        private ICategoryRepository categoryRepository;
 
         public CategoryAdapter(FinanceManager financeManager)
         {
             categoryRepository = financeManager.GetCategoryRepository();
         }
 
-        public List<Category> GetCategoryList()
+        public List<ICategory> GetCategoryList()
         {
             return categoryRepository.GetCategoryList();
         }
 
-        public void ChangeCategory(Category category, string newName = null, Colour newColour = Colour.NONE, double newLimitValue = Double.NaN, Currency newCurrency = Currency.NONE)
+        public void ChangeCategory(ICategory category, string newName = null, Colour newColour = Colour.NONE, double newLimitValue = Double.NaN, Currency newCurrency = Currency.NONE)
         {
             if(newName != null)
             {
@@ -64,7 +67,7 @@ namespace _3_Adapters
 
         public void AddCategory(string name, Colour colour, double limitValue, Currency limitCurrency)
         {
-            Money limit = new Money(limitValue, limitCurrency);
+            IMoney limit = new Money(limitValue, limitCurrency);
             categoryRepository.CreateCategory(name, colour, limit);
         }
     }

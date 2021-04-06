@@ -1,6 +1,8 @@
 ﻿using _1_Domain_Code.Entities;
 using _1_Domain_Code.Enums;
+using _1_DomainCode.Entities.Interfaces;
 using _3_Adapters;
+using _3_Adapters.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,8 +25,8 @@ namespace _4_UI.UI
     /// </summary>
     public partial class CategoryEditor : Page
     {
-        private CategoryAdapter categoryAdapter;
-        public CategoryEditor(CategoryAdapter categoryAdapter)
+        private ICategoryAdapter categoryAdapter;
+        public CategoryEditor(ICategoryAdapter categoryAdapter)
         {
             InitializeComponent();
             this.categoryAdapter = categoryAdapter;
@@ -105,14 +107,14 @@ namespace _4_UI.UI
             Colour categoryColour = (Colour)colourComboBox.SelectedItem;
             double categoryLimitValue = Convert.ToDouble(limitTextBox.Text);
             Currency categoryCurrency = (Currency)currencyComboBox.SelectedItem;
-            Category selectedCategory = (Category)categoryComboBox.SelectedItem;
+            ICategory selectedCategory = (ICategory)categoryComboBox.SelectedItem;
             if (selectedCategory == null)
             {
                 return;
             }
 
             categoryAdapter.ChangeCategory(selectedCategory, categoryName, categoryColour, categoryLimitValue, categoryCurrency);
-            List<Category> categoryList = categoryAdapter.GetCategoryList();
+            List<ICategory> categoryList = categoryAdapter.GetCategoryList();
             categoryComboBox.ItemsSource = new List<Category>();
             categoryComboBox.ItemsSource = categoryList;
             categoryComboBox.SelectedItem = categoryComboBox.Items[0];
