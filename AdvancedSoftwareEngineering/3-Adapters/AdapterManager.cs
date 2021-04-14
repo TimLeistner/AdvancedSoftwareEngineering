@@ -11,7 +11,7 @@ namespace _3_Adapters
 
         public AdapterManager()
         {
-            financeManager = new FinanceManager();
+            financeManager = FinanceManager.GetInstance();
             categoryAdapter = new CategoryAdapter(financeManager);
         }
 

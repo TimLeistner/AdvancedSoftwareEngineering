@@ -16,13 +16,11 @@ namespace _4_UI
     /// </summary>
     public partial class Home : Page
     {
-        private static Home instance;
         private AdapterManager adapterManager;
         public Home()
         {
             InitializeComponent();
             adapterManager = new AdapterManager();
-            instance = this;
         }
 
         private void EditCategoryClick(object sender, RoutedEventArgs e)
@@ -41,11 +39,6 @@ namespace _4_UI
         {
             SpendingOverview spendingOverview = new SpendingOverview(adapterManager.GetCategoryAdapter());
             this.NavigationService.Navigate(spendingOverview);
-        }
-
-        public static Home GetInstance()
-        {
-            return instance;
         }
     }
 }

@@ -36,7 +36,7 @@ namespace _4_UI.UI
 
         public void BackClick(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(Home.GetInstance());
+            this.NavigationService.Navigate(new Home());
         }
 
         public void ClickAddSpendingMode(object sender, RoutedEventArgs e)

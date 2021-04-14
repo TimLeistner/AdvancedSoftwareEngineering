@@ -9,9 +9,11 @@ namespace _2_ApplicationCode
     
     public class FinanceManager
     {
+        public static FinanceManager instance;
+
         private ICategoryRepository categoryRepository;
 
-        public FinanceManager()
+        private FinanceManager()
         {
             categoryRepository = new CategoryRepository();
         }
@@ -19,6 +21,16 @@ namespace _2_ApplicationCode
         public ICategoryRepository GetCategoryRepository()
         {
             return categoryRepository;
+        }
+
+        public static FinanceManager GetInstance()
+        {
+            if(instance == null)
+            {
+                instance = new FinanceManager();
+            }
+
+            return instance;
         }
     }
 }
