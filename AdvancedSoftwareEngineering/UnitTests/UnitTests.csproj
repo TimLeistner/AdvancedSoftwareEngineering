@@ -21,8 +21,4 @@
     <ProjectReference Include="..\4-UI\4-Plugin.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="3_Adapters\" />
-  </ItemGroup>
-
 </Project>

@@ -6,7 +6,7 @@ namespace _3_Adapters
 {
     public class AdapterManager
     {
-        private FinanceManager financeManager;
+        private IFinanceManager financeManager;
         private ICategoryAdapter categoryAdapter;
 
         public AdapterManager()

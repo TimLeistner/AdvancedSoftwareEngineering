@@ -7,9 +7,9 @@ using System.Text;
 namespace _2_ApplicationCode
 {
     
-    public class FinanceManager
+    public class FinanceManager: IFinanceManager
     {
-        public static FinanceManager instance;
+        private static IFinanceManager instance;
 
         private ICategoryRepository categoryRepository;
 
@@ -23,7 +23,7 @@ namespace _2_ApplicationCode
             return categoryRepository;
         }
 
-        public static FinanceManager GetInstance()
+        public static IFinanceManager GetInstance()
         {
             if(instance == null)
             {

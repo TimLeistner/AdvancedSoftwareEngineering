@@ -16,7 +16,7 @@ namespace _3_Adapters
     {
         private ICategoryRepository categoryRepository;
 
-        public CategoryAdapter(FinanceManager financeManager)
+        public CategoryAdapter(IFinanceManager financeManager)
         {
             categoryRepository = financeManager.GetCategoryRepository();
         }
