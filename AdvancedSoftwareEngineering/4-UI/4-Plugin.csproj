@@ -71,6 +71,9 @@
     <Compile Include="UI\SpendingEditor.xaml.cs">
       <DependentUpon>SpendingEditor.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UI\SpendingOverview.xaml.cs">
+      <DependentUpon>SpendingOverview.xaml</DependentUpon>
+    </Compile>
     <Page Include="UI\CategoryEditor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -98,6 +101,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="UI\SpendingEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SpendingOverview.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

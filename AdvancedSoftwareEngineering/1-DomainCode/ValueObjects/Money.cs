@@ -41,5 +41,11 @@ namespace _1_Domain_Code.ValueObjects
             hashCode = hashCode * -1521134295 + currency.GetHashCode();
             return hashCode;
         }
+
+        public override string ToString()
+        {
+            string result = value + " " + currency;
+            return result;
+        }
     }
 }

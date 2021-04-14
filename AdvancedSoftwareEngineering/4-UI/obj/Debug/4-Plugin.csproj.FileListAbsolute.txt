@@ -36,3 +36,5 @@ C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineer
 C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\4-UI\bin\Debug\Moq.xml
 C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\4-UI\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\4-UI\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\4-UI\obj\Debug\UI\SpendingOverview.g.cs
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\4-UI\obj\Debug\UI\SpendingOverview.baml
