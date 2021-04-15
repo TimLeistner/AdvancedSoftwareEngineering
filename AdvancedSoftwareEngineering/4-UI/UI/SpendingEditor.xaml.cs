@@ -70,7 +70,6 @@ namespace _4_UI.UI
 
         private void ClearInputFields()
         {
-            spendingDatePicker.SelectedDate = null;
             moneyTextBox.Text = "";
             descriptionTextBox.Text = "";
         }

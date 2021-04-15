@@ -1,22 +1,11 @@
 ﻿using _1_Domain_Code.Entities;
 using _1_Domain_Code.Enums;
 using _1_DomainCode.Entities.Interfaces;
-using _3_Adapters;
 using _3_Adapters.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace _4_UI.UI
 {
@@ -82,7 +71,7 @@ namespace _4_UI.UI
                 myGrid.Children.Add(saveChangesButton);
             }
 
-            categoryComboBox.ItemsSource = categoryAdapter.GetCategoryList();
+            ReloadCategoryCombobox();
             SetEditingMaskForSelectedCategory();
         }
 
@@ -92,38 +81,71 @@ namespace _4_UI.UI
         }
 
         public void ClickCreateCategory(object sender, RoutedEventArgs e)
-        {
-            string categoryName = nameTextBox.Text;
-            Colour categoryColour = (Colour)colourComboBox.SelectedItem;
-            double categoryLimitValue =  Convert.ToDouble(limitTextBox.Text);
-            Currency categoryCurrency = (Currency)currencyComboBox.SelectedItem;
-
-            categoryAdapter.AddCategory(categoryName, categoryColour, categoryLimitValue, categoryCurrency);
+        {            
+            try
+            {
+                string categoryName = nameTextBox.Text;
+                if (categoryName.Equals(""))
+                {
+                    throw new Exception();
+                }
+                Colour categoryColour = (Colour)colourComboBox.SelectedItem;
+                double categoryLimitValue = Convert.ToDouble(limitTextBox.Text);
+                Currency categoryCurrency = (Currency)currencyComboBox.SelectedItem;
+                categoryAdapter.AddCategory(categoryName, categoryColour, categoryLimitValue, categoryCurrency);
+                ClearEditingMask();
+            }
+            catch(Exception exception)
+            {
+                errorLabel.Content = " One of the inputs is invalid.\n Please select a colour and a currency.\n" +
+                    " You are also only allowed to input numbers as the limit.\n The name of the category has to be atleast one character long.";
+            }            
         }
 
         public void ClickSaveChanges(object sender, RoutedEventArgs e)
         {
-            string categoryName = nameTextBox.Text;
-            Colour categoryColour = (Colour)colourComboBox.SelectedItem;
-            double categoryLimitValue = Convert.ToDouble(limitTextBox.Text);
-            Currency categoryCurrency = (Currency)currencyComboBox.SelectedItem;
-            ICategory selectedCategory = (ICategory)categoryComboBox.SelectedItem;
-            if (selectedCategory == null)
+            try
             {
-                return;
+                string categoryName = nameTextBox.Text;
+                if (categoryName.Equals(""))
+                {
+                    throw new Exception();
+                }
+                Colour categoryColour = (Colour)colourComboBox.SelectedItem;
+                double categoryLimitValue = Convert.ToDouble(limitTextBox.Text);
+                Currency categoryCurrency = (Currency)currencyComboBox.SelectedItem;
+                ICategory selectedCategory = (ICategory)categoryComboBox.SelectedItem;
+
+                categoryAdapter.ChangeCategory(selectedCategory, categoryName, categoryColour, categoryLimitValue, categoryCurrency);
+                ReloadCategoryCombobox();
+                categoryComboBox.SelectedItem = categoryComboBox.Items[0];
+            }
+            catch (Exception exception)
+            {
+                if((ICategory)categoryComboBox.SelectedItem == null)
+                {
+                    errorLabel.Content = "You have to select a category!";
+                }
+                else
+                {
+                    errorLabel.Content = " One of the inputs is invalid.\n Please select a colour and a currency.\n" +
+                        " You are also only allowed to input numbers as the limit.\n The name of the category has to be atleast one character long.";
+                }
             }
 
-            categoryAdapter.ChangeCategory(selectedCategory, categoryName, categoryColour, categoryLimitValue, categoryCurrency);
-            List<ICategory> categoryList = categoryAdapter.GetCategoryList();
-            categoryComboBox.ItemsSource = new List<Category>();
-            categoryComboBox.ItemsSource = categoryList;
-            categoryComboBox.SelectedItem = categoryComboBox.Items[0];
         }
 
         private void InstantiateEditingMask()
         {
             colourComboBox.ItemsSource = Enum.GetValues(typeof(Colour));
             currencyComboBox.ItemsSource = Enum.GetValues(typeof(Currency));
+        }
+        
+        private void ClearEditingMask()
+        {
+            nameTextBox.Text = "";
+            limitTextBox.Text = "";
+            errorLabel.Content = "";
         }
 
         private void SetEditingMaskForSelectedCategory()
@@ -145,6 +167,13 @@ namespace _4_UI.UI
             colourComboBox.SelectedItem = selectedCategory.GetColour();
             limitTextBox.Text = selectedCategory.GetLimit().GetValue().ToString();
             currencyComboBox.SelectedItem = selectedCategory.GetLimit().GetCurrency();
+        }
+
+        private void ReloadCategoryCombobox()
+        {
+            List<ICategory> categoryList = categoryAdapter.GetCategoryList();
+            categoryComboBox.ItemsSource = new List<Category>();
+            categoryComboBox.ItemsSource = categoryList;
         }
     }
 }
