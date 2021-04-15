@@ -40,22 +40,29 @@ namespace _4_UI.UI
         }
 
         public void ClickAddSpendingMode(object sender, RoutedEventArgs e)
-        {
-            
+        {            
         }
 
         public void ClickAddSpending(object sedner, RoutedEventArgs e)
         {
-            ICategory selectedCategory = (ICategory)categoryComboBox.SelectedItem;
-            double amount = Convert.ToDouble(moneyTextBox.Text);
-            DateTime date = (DateTime)spendingDatePicker.SelectedDate;
-            string description = descriptionTextBox.Text;
+            try
+            {
+                ICategory selectedCategory = (ICategory)categoryComboBox.SelectedItem;
+                double amount = Convert.ToDouble(moneyTextBox.Text);
+                DateTime date = (DateTime)spendingDatePicker.SelectedDate;
+                string description = descriptionTextBox.Text;
 
-            Money spendingAmount = new Money(amount, selectedCategory.GetLimit().GetCurrency());
-            Spending newSpending = new Spending(spendingAmount, date, description);
+                Money spendingAmount = new Money(amount, selectedCategory.GetLimit().GetCurrency());
+                Spending newSpending = new Spending(spendingAmount, date, description);
 
-            selectedCategory.AddSpending(newSpending);
-            ClearInputFields();
+                selectedCategory.AddSpending(newSpending);
+                ClearInputFields();
+            }catch(Exception exception)
+            {
+                errorLabel.Content = " One of the inputs is invalid.\n" +
+                    " You are only allowed to input numbers for the spending amount.";
+            }
+            
         }
 
         public void ChangeSelectedCategory(object sender, RoutedEventArgs e)
@@ -66,12 +73,14 @@ namespace _4_UI.UI
         private void InstantiateEditingMask()
         {
             categoryComboBox.ItemsSource = categoryAdapter.GetCategoryList();
+            spendingDatePicker.SelectedDate = DateTime.Now;
         }
 
         private void ClearInputFields()
         {
             moneyTextBox.Text = "";
             descriptionTextBox.Text = "";
+            errorLabel.Content = "";
         }
     }
 }
