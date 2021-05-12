@@ -1,5 +1,4 @@
-﻿using _1_Domain_Code.Entities;
-using _1_DomainCode.Entities.Interfaces;
+﻿using _1_DomainCode.Entities.Interfaces;
 using _2_ApplicationCode.SpendingTools;
 using _3_Adapters;
 using _3_Adapters.Interfaces;

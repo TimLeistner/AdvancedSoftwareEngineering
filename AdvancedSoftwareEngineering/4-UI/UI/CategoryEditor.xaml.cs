@@ -30,23 +30,10 @@ namespace _4_UI.UI
 
         public void ClickCreationMode(object sender, RoutedEventArgs e)
         {
-            if (myGrid.Children.Contains(categoryComboBox))
-            {
-                myGrid.Children.Remove(categoryComboBox);
-            }
-            if (myGrid.Children.Contains(categoryLabel))
-            {
-                myGrid.Children.Remove(categoryLabel);
-            }
-            if (!myGrid.Children.Contains(createCategoryButton))
-            {
-                myGrid.Children.Add(createCategoryButton);
-            }
-            if (myGrid.Children.Contains(saveChangesButton))
-            {
-                myGrid.Children.Remove(saveChangesButton);
-            }
-
+            RemoveUIElement(categoryComboBox);
+            RemoveUIElement(categoryLabel);
+            RemoveUIElement(saveChangesButton);
+            AddUIElement(createCategoryButton);
             
             nameTextBox.Text = "";
             limitTextBox.Text = "";
@@ -54,22 +41,10 @@ namespace _4_UI.UI
 
         public void ClickEditMode(object sender, RoutedEventArgs e)
         {
-            if (!myGrid.Children.Contains(categoryComboBox))
-            {
-                myGrid.Children.Add(categoryComboBox);
-            }
-            if (!myGrid.Children.Contains(categoryLabel))
-            {
-                myGrid.Children.Add(categoryLabel);
-            }
-            if (myGrid.Children.Contains(createCategoryButton))
-            {
-                myGrid.Children.Remove(createCategoryButton);
-            }
-            if (!myGrid.Children.Contains(saveChangesButton))
-            {
-                myGrid.Children.Add(saveChangesButton);
-            }
+            AddUIElement(categoryComboBox);
+            AddUIElement(categoryLabel);
+            AddUIElement(saveChangesButton);
+            RemoveUIElement(createCategoryButton);
 
             ReloadCategoryCombobox();
             SetEditingMaskForSelectedCategory();
@@ -174,6 +149,22 @@ namespace _4_UI.UI
             List<ICategory> categoryList = categoryAdapter.GetCategoryList();
             categoryComboBox.ItemsSource = new List<Category>();
             categoryComboBox.ItemsSource = categoryList;
+        }
+
+        private void AddUIElement(UIElement element)
+        {
+            if (!myGrid.Children.Contains(element))
+            {
+                myGrid.Children.Add(element);
+            }
+        }
+
+        private void RemoveUIElement(UIElement element)
+        {
+            if (myGrid.Children.Contains(element))
+            {
+                myGrid.Children.Remove(element);
+            }
         }
     }
 }
