@@ -34,32 +34,20 @@ namespace _4_UI.UI
 
         public void SpendingSelectionChanged(object sender, RoutedEventArgs e)
         {
-            ICategory selectedCategory = (ICategory)categoryComboBox.SelectedItem;
             StackPanel contentPanel = new StackPanel();
 
-            DateTime? startDate = startDatePicker.SelectedDate;
-            DateTime? endDate = endDatePicker.SelectedDate;
-
-            List<ISpending> spendingList = selectedCategory?.GetSpendings();
+            List<ISpending> spendingList = SelectedCategory()?.GetSpendings();
             if(spendingList == null)
             {
                 return;
             }
             SpendingSorter.SortSpendingByDate(ref spendingList);
 
-            if(startDate > endDate)
-            {
-                dateErrorLabel.Content = "The starting date has to be set before or equal to the ending date";
-                return;
-            }
-            else
-            {
-                dateErrorLabel.Content = "";
-            }
+            if (!DatesValid()) { return; }
 
             spendingList.ForEach((spending) =>
             {
-                if(!(spending.GetDate() >= startDate && spending.GetDate() <= endDate))
+                if(!(spending.GetDate() >= StartDate() && spending.GetDate() <= EndDate()))
                 {
                     return;
                 }
@@ -87,6 +75,35 @@ namespace _4_UI.UI
         public void BackClick(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new Home());
+        }
+
+        private ICategory SelectedCategory()
+        {
+            return (ICategory)categoryComboBox.SelectedItem;
+        }
+
+        private DateTime? StartDate()
+        {
+            return startDatePicker.SelectedDate;
+        }
+
+        private DateTime? EndDate()
+        {
+            return endDatePicker.SelectedDate;
+        }
+
+        private bool DatesValid()
+        {
+            if (StartDate() > EndDate())
+            {
+                dateErrorLabel.Content = "The starting date has to be set before or equal to the ending date";
+                return false;
+            }
+            else
+            {
+                dateErrorLabel.Content = "";
+                return true;
+            }
         }
     }
 }
