@@ -1,0 +1,12 @@
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\1-DomainCode\bin\Release\netstandard2.0\1-DomainCode.deps.json
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\1-DomainCode\bin\Release\netstandard2.0\1-DomainCode.dll
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\1-DomainCode\bin\Release\netstandard2.0\1-DomainCode.pdb
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\1-DomainCode\bin\Release\netstandard2.0\0-AbstractionCode.dll
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\1-DomainCode\bin\Release\netstandard2.0\0-AbstractionCode.pdb
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\1-DomainCode\obj\Release\netstandard2.0\1-DomainCode.csprojAssemblyReference.cache
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\1-DomainCode\obj\Release\netstandard2.0\1-DomainCode.AssemblyInfoInputs.cache
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\1-DomainCode\obj\Release\netstandard2.0\1-DomainCode.AssemblyInfo.cs
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\1-DomainCode\obj\Release\netstandard2.0\1-DomainCode.csproj.CoreCompileInputs.cache
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\1-DomainCode\obj\Release\netstandard2.0\1-DomainCode.csproj.CopyComplete
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\1-DomainCode\obj\Release\netstandard2.0\1-DomainCode.dll
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\1-DomainCode\obj\Release\netstandard2.0\1-DomainCode.pdb

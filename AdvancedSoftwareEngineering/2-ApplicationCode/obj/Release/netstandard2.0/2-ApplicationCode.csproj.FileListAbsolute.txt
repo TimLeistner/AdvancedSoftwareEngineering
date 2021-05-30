@@ -1,0 +1,14 @@
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\2-ApplicationCode\bin\Release\netstandard2.0\2-ApplicationCode.deps.json
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\2-ApplicationCode\bin\Release\netstandard2.0\2-ApplicationCode.dll
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\2-ApplicationCode\bin\Release\netstandard2.0\2-ApplicationCode.pdb
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\2-ApplicationCode\bin\Release\netstandard2.0\0-AbstractionCode.dll
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\2-ApplicationCode\bin\Release\netstandard2.0\1-DomainCode.dll
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\2-ApplicationCode\bin\Release\netstandard2.0\0-AbstractionCode.pdb
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\2-ApplicationCode\bin\Release\netstandard2.0\1-DomainCode.pdb
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\2-ApplicationCode\obj\Release\netstandard2.0\2-ApplicationCode.csprojAssemblyReference.cache
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\2-ApplicationCode\obj\Release\netstandard2.0\2-ApplicationCode.AssemblyInfoInputs.cache
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\2-ApplicationCode\obj\Release\netstandard2.0\2-ApplicationCode.AssemblyInfo.cs
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\2-ApplicationCode\obj\Release\netstandard2.0\2-ApplicationCode.csproj.CoreCompileInputs.cache
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\2-ApplicationCode\obj\Release\netstandard2.0\2-ApplicationCode.csproj.CopyComplete
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\2-ApplicationCode\obj\Release\netstandard2.0\2-ApplicationCode.dll
+C:\Users\timle\source\repos\AdvancedSoftwareEngineering\AdvancedSoftwareEngineering\2-ApplicationCode\obj\Release\netstandard2.0\2-ApplicationCode.pdb
